@@ -8,12 +8,14 @@
 
 {% block content %}
     {% if user_ip %}
-        <h1>'Hello world desde la IP {{ user_ip }}</h1>
+        <h1>Hello World Platzi, tu IP es {{ user_ip }}</h1>
     {% else %}
-        <a href="{{ url_for('index') }}">Ir al inicio</a>
+        <a href="{{ url_for('index') }}">Ir a inicio</a>
     {% endif %}
 
-    {% for todo in todos %}
-        <p> {{ macros.render_todo(todo) }} </p>
-    {% endfor %}
+    <ul>
+        {% for todo in todos %}
+            {{ macros.render_todo(todo) }}
+        {% endfor %}
+    </ul>
 {% endblock %}
